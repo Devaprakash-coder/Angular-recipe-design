@@ -1,0 +1,22 @@
+<div class="container">
+
+    <section class="image">
+    </section>
+
+    <section class="content">
+        <div class="card" *ngFor="let post of posts$">
+            <div class="imgbx" [ngClass]="{'none': post.thumbnail === ''}">
+                <h1>{{post.title}}</h1>
+                <img src="{{post.thumbnail}}">
+            </div>
+            <div class="text">
+                <h2>ingredients:<span>{{post.ingredients}}</span></h2>
+                <button><a href="{{post.href}}">Explore</a></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>copyrights</p>
+    </footer>
+</div>
