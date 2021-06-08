@@ -4,16 +4,42 @@
     </section>
 
     <section class="content">
-        <div class="card" *ngFor="let post of posts$">
-            <div class="imgbx" [ngClass]="{'none': post.thumbnail === ''}">
-                <h1>{{post.title}}</h1>
-                <img src="{{post.thumbnail}}">
+        
+        <div class="p-card" style="position:relative;    position: relative;
+        background-color: #03a9f4;
+        box-shadow: #6150508c 3px 4px 11px 5px;" *ngFor="let post of posts$" [ngClass]="{'none': post.thumbnail === ''}">
+            <div style="position: relative;">
+                <img [src]="post.thumbnail" alt="thumbnail" style="width: 100%;">
+                <span style="font-size: 20px;
+                background: #000000a3;
+                position: absolute;
+                left: 14%;
+                right: 14%;
+                padding: 20px;
+                top: 25%;
+                color: aliceblue;" class="web-view">{{post.title}}</span>
             </div>
-            <div class="text">
-                <h2>ingredients:<span>{{post.ingredients}}</span></h2>
-                <button><a href="{{post.href}}">Explore</a></button>
+            <div>
+                <span class="mob-view">{{post.title}}</span>
+                <p><span style="font-size: 23px;
+                    font-weight: 600;
+                    padding: 13px;">ingredients:</span>
+                    {{post.ingredients}}
+                </p>
             </div>
         </div>
+        
+        <!-- <div class="card" *ngFor="let post of posts$" [ngClass]="{'none': post.thumbnail === ''}">
+            <a [href]="post.href">
+                <div class="small">
+                    <h1>{{post.title}}</h1>
+                    <img src="{{post.thumbnail}}">
+                    <h2><b>ingredients:</b><span>{{post.ingredients}}</span></h2>
+                </div>
+            </a>
+        </div> -->
+
+        
     </section>
 
     <footer>

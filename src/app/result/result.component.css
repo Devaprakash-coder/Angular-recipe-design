@@ -4,6 +4,9 @@
     height: 100%;
     grid-template-rows: 500px auto 50px;
 }
+.container a{
+    text-decoration: none;
+}
 .image{
     background: url(/./assets/images/soft_burger.jpg);
     background-position: center;
@@ -12,21 +15,27 @@
     height: 100%;
 }
 .content{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 445px 445px 545px;
-    row-gap: 90px;
+    row-gap: 90px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    padding: 50px 40px;
 }
 .card{
     background: #e8e8de;
-    box-shadow: 1px 4px 10px 2px black;
-    width: 57%;
-    height: 460px;
+    box-shadow: 4px 4px 12px 0px #7a6a6a;
+    width: 61%;
+    height: 410px;
     margin: 55px 0px 0px 110px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 205px 1fr;
+    grid-template-rows: 220px 131px;
     border-radius: 5px;
+    position: relative;
 }
 .card img{
     filter: brightness(0.5);
@@ -40,6 +49,7 @@
 .none{
     background-color: #5e5e65;
     height: 100%;
+    width: 100%;
     border-radius: 5px 5px 0px 0px;
 }
 .card h1{
@@ -48,31 +58,35 @@
     font-weight: lighter;
     z-index: 1;
     text-align: center;
+    position: absolute;
+    margin-top: 70px;
     align-self: center;
+    width: 100%;
 
 }
-.imgbx{
-    display: grid;
-    grid-template-rows: 0px;
-}
-.text{
-    display: grid;
-    grid-template-rows: 1fr;
-}
-.text h2{
+h2{
     color: #564f4f;
     font-size: 20px;
     text-align: center;
     align-self: center;
     overflow: hidden;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
 }
-.text span{
+b{
+    text-align: left;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+span{
     text-decoration: none;
     margin-left: 10px;
 }
 button{
     width: 100%;
-    height: 70px;
+    height: 71px;
     margin-top: -11px;
     text-align: center;
     border: none;
@@ -84,7 +98,7 @@ button a{
     text-decoration: none;
     font-size: 20px;
     font-weight: lighter;
-    color: white;
+    color: black;
 }
 footer{
     text-align: center;
@@ -95,13 +109,25 @@ footer{
     align-content: center;
     background: #4e67bade;
 }
+.mob-view{
+    display: none;
+}
+.web-view{
+    display: block;
+}
 
 @media only screen and (max-width: 480px) {
+    .p-card{
+        display: flex;
+    }
+    .mob-view{
+        display: block;
+    }
+    .web-view {
+        display: none;
+    }
     .container{
         grid-template-rows: 260px auto 50px;
-    }
-    .image{
-        height: 100%;
     }
     .content{
     grid-template-columns: 1fr;
@@ -109,33 +135,64 @@ footer{
     row-gap: 20px;
     overflow: scroll;
     }
+    .small{
+        box-shadow: 0px 0px 6px 1px black;
+    width: 100%;
+    height: 125px;
+    margin: 0px;
+    border-radius: 0px;
+    grid-template-columns: 119px 185px;
+    grid-template-rows: 63px 61px;
+    display: grid;
+    }
     .card{
         box-shadow: 0px 0px 6px 1px black;
         width: 100%;
         height: 125px;
         margin: 0px;
         border-radius: 0px;
-        grid-template-columns: 1fr 2fr;
-    grid-template-rows: 0fr;
+        grid-template-columns: 0px 0px 0px;
+         grid-template-rows: 0px 0px;
+         background-color: white;
     }
     .card img{
-        width: 100%;
-        height: 126px;
+        width: 85%;
+        height: 95px;
         border-radius: 0px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: 12px;
+        border-radius: 8px;
     }
     .none{
         background-color: #5e5e65;
         height: 126px;
     }
     .card h1{
-        color: white;
-    font-size: 20px;
-    font-weight: lighter;
-    z-index: 1;
-    text-align: center;
-    align-self: center;
-    margin: 0px;
+        color: #2e2b2b;
+        font-size: 16px;
+        font-weight: 900;
+        z-index: 1;
+        text-align: left;
+        align-self: center;
+        margin: 0px;
+        grid-column: 2/2;
+        grid-row: 1/1;
+        position: relative;
+        line-height: 1.3;
     
+    }
+    h2{
+        color: #564f4f;
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.5;
+    grid-column: 2/2;
+    grid-row: 2/2;
+    overflow: scroll;
+    align-self: flex-start;
+    margin: 0px;
+    padding: 0px;
     }
     .imgbx{
         grid-column: 1/1;
